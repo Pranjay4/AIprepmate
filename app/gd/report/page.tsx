@@ -12,7 +12,7 @@ export default function ReportPage() {
 
   useEffect(() => {
     if (status === "idle" || (!report && status !== "evaluating" && status !== "error")) {
-      router.replace("/");
+      router.replace("/gd");
     }
   }, [status, report, router]);
 
@@ -33,7 +33,7 @@ export default function ReportPage() {
         <div className="text-center max-w-md">
           <p className="text-sm font-medium text-danger mb-2">Couldn&apos;t generate your report</p>
           <p className="text-sm text-muted">{errorMessage}</p>
-          <Link href="/" className="mt-4 inline-block rounded-lg border border-border px-4 py-2 text-sm font-medium">
+          <Link href="/gd" className="mt-4 inline-block rounded-lg border border-border px-4 py-2 text-sm font-medium">
             Back to dashboard
           </Link>
         </div>
@@ -46,13 +46,13 @@ export default function ReportPage() {
       <ReportView topic={topic} report={report} />
       <div className="flex gap-3 mt-10 pb-10">
         <Link
-          href="/setup"
+          href="/gd/setup"
           onClick={() => reset()}
           className="rounded-lg bg-navy text-white text-sm font-medium px-5 py-2.5"
         >
           Practice another GD
         </Link>
-        <Link href="/performance" className="rounded-lg border border-border text-sm font-medium px-5 py-2.5">
+        <Link href="/gd/performance" className="rounded-lg border border-border text-sm font-medium px-5 py-2.5">
           View performance trends
         </Link>
       </div>

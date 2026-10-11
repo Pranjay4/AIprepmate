@@ -24,7 +24,7 @@ export default function SessionDetailPage() {
     return (
       <div className="max-w-4xl mx-auto px-6 py-10">
         <p className="text-sm text-muted mb-3">Session not found.</p>
-        <Link href="/sessions" className="text-sm underline">
+        <Link href="/gd/sessions" className="text-sm underline">
           Back to previous sessions
         </Link>
       </div>

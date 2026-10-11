@@ -1,19 +1,55 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 :root {
-  --background: #f5f6f8;
+  --background: #f7f8fb;
   --surface: #ffffff;
-  --surface-muted: #eef0f4;
-  --foreground: #101425;
-  --muted: #5b6272;
-  --border: #e1e4ea;
-  --navy: #0b1220;
-  --navy-2: #131b2e;
-  --accent: #b8862c;
-  --accent-soft: #f4e6cb;
-  --success: #1f8a5f;
+  --surface-muted: #f0f2f7;
+  --foreground: #0f172a;
+  --muted: #5b6478;
+  --border: #e2e6ee;
+  --navy: #0f1b3d;
+  --navy-2: #17264f;
+  --accent: #4f46e5;
+  --accent-strong: #4338ca;
+  --accent-soft: #eef0ff;
+  --success: #15803d;
+  --success-soft: #e7f5ec;
+  --warning: #b45309;
+  --warning-soft: #fdf3e1;
   --danger: #c23b3b;
+  --danger-soft: #fcecec;
   --info: #2563a8;
+  --chart-1: #2a78d6;
+  --chart-2: #eb6834;
+  --chart-grid: #e6e9f0;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #0b1020;
+  --surface: #121a2e;
+  --surface-muted: #19233b;
+  --foreground: #e8ecf5;
+  --muted: #9aa5bd;
+  --border: #25304a;
+  --navy: #060a16;
+  --navy-2: #0f1830;
+  --accent: #8b8cf8;
+  --accent-strong: #a5a6fb;
+  --accent-soft: #1f2450;
+  --success: #4ade80;
+  --success-soft: #11301f;
+  --warning: #fbbf24;
+  --warning-soft: #33270c;
+  --danger: #f87171;
+  --danger-soft: #3a1717;
+  --info: #7fb4ee;
+  --chart-1: #3987e5;
+  --chart-2: #d95926;
+  --chart-grid: #25304a;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -26,26 +62,16 @@
   --color-navy: var(--navy);
   --color-navy-2: var(--navy-2);
   --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
   --color-accent-soft: var(--accent-soft);
   --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
   --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
   --color-info: var(--info);
   --font-sans: var(--font-inter);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0d16;
-    --surface: #111827;
-    --surface-muted: #161f30;
-    --foreground: #e9ecf2;
-    --muted: #9aa3b5;
-    --border: #232c40;
-    --navy: #05070d;
-    --navy-2: #0e1524;
-    --accent: #d7a648;
-    --accent-soft: #2a2213;
-  }
 }
 
 * {
@@ -85,3 +111,12 @@ body {
 .entry-in {
   animation: fade-in-up 0.25s ease-out;
 }
+
+.cp-prose p { margin: 0 0 0.75rem; line-height: 1.7; }
+.cp-prose ul { margin: 0 0 0.75rem; padding-left: 1.2rem; list-style: disc; }
+.cp-prose li { margin: 0.2rem 0; line-height: 1.6; }
+.cp-prose pre { margin: 0 0 0.9rem; padding: 0.8rem 1rem; border-radius: 0.5rem; background: var(--surface-muted); border: 1px solid var(--border); overflow-x: auto; font-size: 0.8rem; line-height: 1.55; }
+.cp-prose code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85em; }
+.cp-prose :not(pre) > code { background: var(--surface-muted); padding: 0.1rem 0.3rem; border-radius: 0.25rem; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

@@ -21,7 +21,7 @@ export default function SessionsPage() {
       {sessions && sessions.length === 0 && (
         <div className="rounded-xl border border-border bg-surface p-10 text-center">
           <p className="text-sm text-muted mb-4">You haven&apos;t completed a GD yet.</p>
-          <Link href="/setup" className="rounded-lg bg-navy text-white text-sm font-medium px-4 py-2">
+          <Link href="/gd/setup" className="rounded-lg bg-navy text-white text-sm font-medium px-4 py-2">
             Start your first GD
           </Link>
         </div>
@@ -30,7 +30,7 @@ export default function SessionsPage() {
       {sessions && sessions.length > 0 && (
         <div className="rounded-xl border border-border bg-surface divide-y divide-border">
           {[...sessions].reverse().map((s) => (
-            <Link key={s.id} href={`/sessions/${s.id}`} className="flex items-center justify-between px-5 py-4 hover:bg-surface-muted transition-colors">
+            <Link key={s.id} href={`/gd/sessions/${s.id}`} className="flex items-center justify-between px-5 py-4 hover:bg-surface-muted transition-colors">
               <div className="min-w-0">
                 <p className="text-sm font-medium truncate">{s.topic}</p>
                 <p className="text-xs text-muted mt-1">

@@ -37,7 +37,7 @@ export default function TopicsPage() {
         <section key={category}>
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-sm font-semibold">{CATEGORY_LABELS[category]}</h2>
-            <Link href={`/setup?category=${category}`} className="text-xs font-medium text-accent hover:underline">
+            <Link href={`/gd/setup?category=${category}`} className="text-xs font-medium text-accent hover:underline">
               Start a GD in this category &rarr;
             </Link>
           </div>

@@ -75,7 +75,7 @@ function SetupForm() {
         },
         userName || "You"
       );
-      router.push("/gd");
+      router.push("/gd/live");
     } catch {
       setSubmitting(false);
     }
